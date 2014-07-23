@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 2.8.12)
+
+file(GLOB a_sources "a*.cpp")
+add_library(a ${a_sources})
+file(GLOB b_sources "b*.cpp")
+add_library(b ${b_sources})
+target_link_libraries(b a)
+file(GLOB c_sources "c*.cpp")
+add_library(c ${c_sources})
+target_link_libraries(c b)
